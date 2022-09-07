@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BT-Storage/" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BT-Storage/netbackup-py" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BT-Storage/netbackup-py.py" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bt-storage/netbackup-py " vcs="Git" />
+  </component>
+</project>
