@@ -1,0 +1,23 @@
+Pingable is a script which can read an ini config file and parse the machines in the ini file's list. Then it pings those machines at whatever interval is configured via a crontab job and tracks the latency for each machine. The purpose is to track periods of high latency and downtime over time and tell when there are problems and what time(s) of day that tends to be.
+
+The data for this script is currently stored in a postgres database, although that's easily configurable if you know Python. To use the script, you need to do 3 things:
+
+1. Setup the postgres database.
+
+    a. Install Postgres.
+    b. Do the standard minimal config of postgres.
+    c. Install pgadmin4. I could do this via command-line, but this is far easier.
+    d. Log into pgadmin4. Select Servers and your local host. Right click on databases. Create your database and name it operations.
+    e. Under operations, expand the schema and select tables. Create a new table called host_ping.
+    f. There's an included image file in the Pingable folder that is the schema for this table. Load the image and set the table columns to have the same properties as this image (note there's a value on the far right in a textbox that's not required).
+
+
+
+2. Configure your ini file. The default name is pingable.ini.
+
+3. Put pingable.py in a crontab entry and run it generally about once every 15 minutes to 1/2 hour, depending on how granlular you want the data. Remember the more often it runs, the more data in the database. The script doesn;t automatically truncate the data after a certain time currently.
+
+4. There is a cherrypy template included for displaying the data in it's most basic form, but it needs work. I never really made a full page for this. I was more interested in the data than the display of it at the time this was created about a year to 18 months ago.
+
+
+"host_name, host_ip, host_serial, host_type, host_ping_ip, host_ping_name, host_ping_lat, ip_ping_lat"
